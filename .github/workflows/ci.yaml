@@ -27,9 +27,9 @@ jobs:
           java-version: '17'
           cache: maven
 
-      # Stage: Code Compile
-      - name: Compile Code
-        run: mvn clean compile
+      # # Stage: Code Compile
+      # - name: Compile Code
+      #   run: mvn clean compile
 
       # Stage: Unit Testing
       - name: Run Unit Tests
