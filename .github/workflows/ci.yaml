@@ -41,8 +41,8 @@ jobs:
         with:
           projectBaseDir: .
           args: >
-            -Dsonar.projectKey=demo
-            -Dsonar.projectName=demo
+            -Dsonar.projectKey=demo1
+            -Dsonar.projectName=demo1
             -Dsonar.java.binaries=target/classes
         env:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
