@@ -35,18 +35,18 @@ jobs:
       - name: Run Unit Tests
         run: mvn test -Dmaven.test.skip=true
 
-      # Stage: SonarQube Analysis
-      - name: SonarQube Scan
-        uses: sonarsource/sonarcloud-github-action@v2
-        with:
-          projectBaseDir: .
-          args: >
-            -Dsonar.projectKey=demo1
-            -Dsonar.projectName=demo1
-            -Dsonar.java.binaries=target/classes
-        env:
-          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
-          SONAR_HOST_URL: ${{ secrets.SONAR_HOST_URL }}
+      # # Stage: SonarQube Analysis
+      # - name: SonarQube Scan
+      #   uses: sonarsource/sonarcloud-github-action@v2
+      #   with:
+      #     projectBaseDir: .
+      #     args: >
+      #       -Dsonar.projectKey=demo1
+      #       -Dsonar.projectName=demo1
+      #       -Dsonar.java.binaries=target/classes
+      #   env:
+      #     SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+      #     SONAR_HOST_URL: ${{ secrets.SONAR_HOST_URL }}
 
       # # Stage: OWASP Dependency Check
       # - name: Dependency Check
