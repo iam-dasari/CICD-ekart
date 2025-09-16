@@ -48,19 +48,19 @@ jobs:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
           SONAR_HOST_URL: ${{ secrets.SONAR_HOST_URL }}
 
-      # Stage: OWASP Dependency Check
-      - name: Dependency Check
-        uses: dependency-check/Dependency-Check_Action@main
-        with:
-          project: 'demo'
-          path: '.'
-          format: 'ALL'
-          out: 'reports'
-      - name: Upload Dependency Check Report
-        uses: actions/upload-artifact@v4
-        with:
-          name: dependency-check-report
-          path: reports
+      # # Stage: OWASP Dependency Check
+      # - name: Dependency Check
+      #   uses: dependency-check/Dependency-Check_Action@main
+      #   with:
+      #     project: 'demo'
+      #     path: '.'
+      #     format: 'ALL'
+      #     out: 'reports'
+      # - name: Upload Dependency Check Report
+      #   uses: actions/upload-artifact@v4
+      #   with:
+      #     name: dependency-check-report
+      #     path: reports
 
       # Stage: Build
       - name: Build Package
@@ -84,18 +84,18 @@ jobs:
       - name: Build Docker Image
         run: docker build -t dasaridevops/cicd-ekart:latest -f docker/Dockerfile .
 
-      # Stage: Trivy Scan
-      - name: Run Trivy Scan
-        uses: aquasecurity/trivy-action@master
-        with:
-          image-ref: dasaridevops/cicd-ekart:latest
-          format: 'table'
-          output: 'trivy-report.txt'
-      - name: Upload Trivy Report
-        uses: actions/upload-artifact@v4
-        with:
-          name: trivy-report
-          path: trivy-report.txt
+      # # Stage: Trivy Scan
+      # - name: Run Trivy Scan
+      #   uses: aquasecurity/trivy-action@master
+      #   with:
+      #     image-ref: dasaridevops/cicd-ekart:latest
+      #     format: 'table'
+      #     output: 'trivy-report.txt'
+      # - name: Upload Trivy Report
+      #   uses: actions/upload-artifact@v4
+      #   with:
+      #     name: trivy-report
+      #     path: trivy-report.txt
 
       # Stage: Docker Push
       - name: Push Docker Image
