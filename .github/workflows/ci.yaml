@@ -31,9 +31,9 @@ jobs:
       # - name: Compile Code
       #   run: mvn clean compile
 
-      # Stage: Unit Testing
-      - name: Run Unit Tests
-        run: mvn test -Dmaven.test.skip=true
+      # # Stage: Unit Testing
+      # - name: Run Unit Tests
+      #   run: mvn test -Dmaven.test.skip=true
 
       # # Stage: SonarQube Analysis
       # - name: SonarQube Scan
