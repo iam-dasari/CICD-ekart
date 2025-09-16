@@ -6,12 +6,12 @@
   <servers>
     <server>
       <id>maven-releases</id>
-      <username>${env.MAVEN_USERNAME}</username>
-      <password>${env.MAVEN_PASSWORD}</password>
+      <username>admin</username>
+      <password>admin123</password>
     </server>
           <id>maven-snapshots</id>
-      <username>${env.MAVEN_USERNAME}</username>
-      <password>${env.MAVEN_PASSWORD}</password>
+      <username>admin</username>
+      <password>admin123</password>
     </server>
   </servers>
 
