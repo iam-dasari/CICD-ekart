@@ -159,7 +159,17 @@
       <name>maven-snapshots</name>
       <url>http://18.215.173.169:8081/repository/maven-snapshots/</url>
     </snapshotRepository>
+
+    <repository>
+        <id>nexus</id>
+        <url>http://192.168.0.101:8081/#admin/repository/repositories:maven-releases/</url>
+    </repository>
+    <snapshotRepository>
+        <id>nexus</id>
+        <url>http://192.168.0.101:8081/#admin/repository/repositories:maven-snapshots/</url>
+    </snapshotRepository>
 </distributionManagement>
+
 
 
 </project>
