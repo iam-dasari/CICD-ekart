@@ -1,7 +1,7 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: argocd2
+  name: argocd-ex
   namespace: argocd # Namespace where the Argo CD Application resource lives
   finalizers:
     # The default behaviour is foreground cascading deletion
