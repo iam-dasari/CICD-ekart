@@ -67,11 +67,11 @@ jobs:
         run: mvn package -Dmaven.test.skip=true
 
       # Stage: Deploy to Nexus
-      - name: Deploy to Nexus
-        run: mvn deploy -Dmaven.test.skip=true
-        env:
-          MAVEN_USERNAME: ${{ secrets.NEXUS_USERNAME }}
-          MAVEN_PASSWORD: ${{ secrets.NEXUS_PASSWORD }}
+      # - name: Deploy to Nexus
+      #   run: mvn deploy -Dmaven.test.skip=true
+      #   env:
+      #     MAVEN_USERNAME: ${{ secrets.NEXUS_USERNAME }}
+      #     MAVEN_PASSWORD: ${{ secrets.NEXUS_PASSWORD }}
 
       # Stage: Docker Login
       - name: Log in to DockerHub
