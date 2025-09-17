@@ -84,18 +84,18 @@ jobs:
       - name: Build Docker Image
         run: docker build -t dasaridevops/cicd-ekart:latest -f docker/Dockerfile .
 
-      # # Stage: Trivy Scan
-      # - name: Run Trivy Scan
-      #   uses: aquasecurity/trivy-action@master
-      #   with:
-      #     image-ref: dasaridevops/cicd-ekart:latest
-      #     format: 'table'
-      #     output: 'trivy-report.txt'
-      # - name: Upload Trivy Report
-      #   uses: actions/upload-artifact@v4
-      #   with:
-      #     name: trivy-report
-      #     path: trivy-report.txt
+      # Stage: Trivy Scan
+      - name: Run Trivy Scan
+        uses: aquasecurity/trivy-action@master
+        with:
+          image-ref: dasaridevops/cicd-ekart:latest
+          format: 'table'
+          output: 'trivy-report.txt'
+      - name: Upload Trivy Report
+        uses: actions/upload-artifact@v4
+        with:
+          name: trivy-report
+          path: trivy-report.txt
 
       # Stage: Docker Push
       - name: Push Docker Image
